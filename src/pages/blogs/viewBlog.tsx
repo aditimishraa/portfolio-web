@@ -20,8 +20,8 @@ export default function ViewBlog() {
             try {
                 if (blogId) {
                     console.log(blogId)
-                    console.log('BACKEND_URL',process.env.NEXT_BACKEND_URL)
-                    const response = await axios.get(`${process.env.NEXT_BACKEND_URL}/api/v1/blog/${blogId}`);
+                    console.log('BACKEND_URL',process.env.NEXT_PUBLIC_BACKEND_URL)
+                    const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/blog/${blogId}`);
                     setBlog(response.data);
                     console.log(response)
                 }

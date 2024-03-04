@@ -8,11 +8,11 @@ dotenv.config();
 
 export default function Blogs() {
     const [blogs, setBlogs] = useState<BlogData>({ blog: [] });
-    console.log('BACKEND_URL',process.env.NEXT_BACKEND_URL)
+    console.log('BACKEND_URL',process.env.NEXT_PUBLIC_BACKEND_URL)
     useEffect(() => {
         async function fetchPosts() {
             try {
-                const response = await axios.get(`${process.env.NEXT_BACKEND_URL}/api/v1/blog/bulk`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/blog/bulk`);
                 setBlogs(response.data);
             } catch (error) {
                 console.error('Error fetching posts:', error);
